@@ -8,7 +8,7 @@ def load_teacher_model(device):
     """Load the best teacher model checkpoint"""
     teacher_model = create_teacher_model()
     
-    checkpoints_dir = Path("checkpoints/teacher")
+    checkpoints_dir = Path("checkpoints/teacher") # check ..checkpoints/teacher directory
     if not checkpoints_dir.exists():
         raise ValueError("Train teacher model first")
     

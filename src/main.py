@@ -24,11 +24,16 @@ def load_model_params(params_path):
         return json.load(f)
 
 def get_data_loaders(config):
+
+    # Normalize each channel to have mean=0.5, SD = 0.5 
     transform = transforms.Compose([
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
     ])
 
+    # Path(__file__) for the file /home/user/project/src/main.py would create a Path object that represents this path
+    #  Path(__file__).parent.parent =>  /home/user/project
     project_root = Path(__file__).parent.parent
+
     data_dir = project_root / Path(config['data']['data_dir'])
     train_files = [str(data_dir / f"data_batch_{i}") for i in range(1, 6)]
     test_file = [str(data_dir / "test_batch")]
@@ -124,7 +129,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--train_teacher",
-        action="store_true",
+        action="store_true", # append a Truthy value of the tag => args.train_teacher == True, if --train_teacher specified 
     )
     args = parser.parse_args()
     main(args)

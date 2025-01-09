@@ -44,6 +44,7 @@ def train(student_model, train_loader, optimizer, device, temperature=2.0, alpha
     if teacher:
         teacher_model = load_teacher_model(device)
     
+    # batch_idx, (tensor of (batch_size, channels, height, width), tensor of (labels)) - a batched input 
     for batch_idx, (data, target) in enumerate(tqdm(train_loader, desc="Training")):
         data, target = data.to(device), target.to(device)
         

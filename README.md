@@ -13,3 +13,9 @@ python src/main.py --config config/config.yaml # then train student
 ```
 
 ### Results 
+
+| Model | Test Acc  |
+| :---:   | :---: | 
+| ResNet50 | 88.86%  | 
+| CNN with ResNet50 Teacher | 71.09% |
+| CNN  | 69.99% |

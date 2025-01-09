@@ -1,0 +1,1 @@
+This folder contains cifar-10-batches-py folder 

@@ -31,7 +31,7 @@ def get_data_loaders(config):
     ])
 
     # Path(__file__) for the file /home/user/project/src/main.py would create a Path object that represents this path
-    #  Path(__file__).parent.parent =>  /home/user/project
+    # Path(__file__).parent.parent =>  /home/user/project
     project_root = Path(__file__).parent.parent
 
     data_dir = project_root / Path(config['data']['data_dir'])
@@ -79,6 +79,8 @@ def main(args):
             device=device
         )
         print(f"Teacher model training completed with best accuracy: {teacher_acc:.2f}%")
+
+        # for the sake of "not too long runs", execute student training seperately than the teacher_finetuning 
         return
 
     student_model = CNN()

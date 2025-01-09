@@ -11,7 +11,7 @@ training:
   alpha: 0.5
   save_dir: "./checkpoints"
   log_interval: 100
-  teacher: False 
+  teacher: True 
 
 model:
   teacher: "resnet50"

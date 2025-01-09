@@ -1,0 +1,6 @@
+{
+    "conv1_channels": 32,
+    "conv2_channels": 64,
+    "fc1_features": 128,
+    "num_classes": 10
+}

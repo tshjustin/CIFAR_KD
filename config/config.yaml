@@ -1,0 +1,18 @@
+data:
+  train_batch_size: 128
+  test_batch_size: 256
+  num_workers: 4
+  data_dir: "./data/cifar-10-batches-py"
+
+training:
+  epochs: 25
+  learning_rate: 0.001
+  temperature: 2.0
+  alpha: 0.5
+  save_dir: "./checkpoints"
+  log_interval: 100
+  teacher: False 
+
+model:
+  teacher: "resnet50"
+  student_params: "config/model_params.json"
